@@ -8,7 +8,6 @@ const data = []
 for (var i = 0; i < 364; i++) {
   data.push(Math.round(Math.random() * 4))
 }
-console.log(data)
 root.render(
   <React.StrictMode>
     <div className="showcase-container">
