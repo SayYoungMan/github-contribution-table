@@ -1,11 +1,110 @@
-.App {
+.outer-most-border {
+  border: max(1px, 0.0625rem) solid #d0d7de;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.outer-table-container {
+  display: flex;
   text-align: center;
+  padding-top: 0.25rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 100%;
+  overflow: hidden;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.inner-table-container {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.footer-container {
+  font-size: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+.footer-caption-container {
+  float: left;
+}
+
+.footer-caption {
+  color: #656d76;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.footer-legend-container {
+  float: right;
+  color: #656d76;
+}
+
+.level-0-grid {
+  fill: #ebedf0;
+  background-color: #ebedf0;
+}
+
+.level-1-grid {
+  fill: #9be9a8;
+  background-color: #9be9a8;
+}
+
+.level-2-grid {
+  fill: #40c463;
+  background-color: #40c463;
+}
+
+.level-3-grid {
+  fill: #30a14e;
+  background-color: #30a14e;
+}
+
+.level-4-grid {
+  fill: #216e39;
+  background-color: #216e39;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
+svg {
+  overflow: hidden;
+  overflow-clip-margin: content-box;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+
+rect {
+  width: 10px;
+  height: 10px;
+  rx: 2;
+  ry: 2;
+  border-radius: 2px;
+  outline: 1px solid rgba(27, 31, 35, 0.06);
+  outline-offset: -1px;
+  shape-rendering: geometricPrecision;
+}
+
+div {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -25,7 +124,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #497d8b;
 }
 
 @keyframes App-logo-spin {
