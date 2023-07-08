@@ -1,4 +1,4 @@
-import "./App.css"
+import "./ContributionTable.css"
 
 function App() {
   const monthsColSpanList = [

@@ -122,6 +122,8 @@ svg {
   display: inline-block;
   width: 10px;
   height: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 .cell-basic {
