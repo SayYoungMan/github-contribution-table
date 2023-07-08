@@ -24,6 +24,49 @@
   overflow-y: hidden;
 }
 
+table {
+  border-spacing: 4px;
+  border-collapse: separate;
+  overflow: hidden;
+  position: relative;
+  width: max-content;
+}
+
+td {
+  padding: 0;
+}
+
+.table-axis-td {
+  position: relative;
+  padding: 0.125em 0.5em 0.125em 0;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  color: #1F2328;
+  fill: #1F2328;
+}
+
+.month-axis-span {
+  position: absolute;
+  top: 0;
+}
+
+.hide-day-axis-span {
+  clip-path: circle(0);
+  position: absolute;
+  bottom: -4px;
+}
+
+.show-day-axis-span {
+  clip-path: none;
+  position: absolute;
+  bottom: -3px;
+}
+
+.grid-row-tr {
+  height: 11px;
+}
+
 .footer-container {
   font-size: 0.75rem;
   padding-top: 0.25rem;
@@ -48,34 +91,29 @@
   color: #656d76;
 }
 
-.level-0-grid {
+.level-0-cell {
   fill: #ebedf0;
   background-color: #ebedf0;
 }
 
-.level-1-grid {
+.level-1-cell {
   fill: #9be9a8;
   background-color: #9be9a8;
 }
 
-.level-2-grid {
+.level-2-cell {
   fill: #40c463;
   background-color: #40c463;
 }
 
-.level-3-grid {
+.level-3-cell {
   fill: #30a14e;
   background-color: #30a14e;
 }
 
-.level-4-grid {
+.level-4-cell {
   fill: #216e39;
   background-color: #216e39;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
 svg {
@@ -86,7 +124,7 @@ svg {
   height: 10px;
 }
 
-rect {
+.cell-basic {
   width: 10px;
   height: 10px;
   rx: 2;
@@ -97,41 +135,6 @@ rect {
   shape-rendering: geometricPrecision;
 }
 
-div {
-  display: block;
-}
-
 * {
   box-sizing: border-box;
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #497d8b;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
