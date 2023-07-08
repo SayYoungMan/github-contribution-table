@@ -1,6 +1,6 @@
 import "./ContributionTable.css"
 
-function App() {
+export default function ContributionTable(props) {
   const monthsColSpanList = [
     { month: "Jan", colSpan: 5 },
     { month: "Feb", colSpan: 4 },
@@ -17,6 +17,23 @@ function App() {
   ]
 
   const daysList = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+  const max = Math.max(...props.data)
+  const interval = max / 4
+
+  function assignLevel(value) {
+    if (value === 0) {
+      return 0
+    } else if (value <= interval) {
+      return 1
+    } else if (value <= 2 * interval) {
+      return 2
+    } else if (value <= 3 * interval) {
+      return 3
+    } else {
+      return 4
+    }
+  }
 
   return (
     <div className="outer-most-border">
@@ -36,13 +53,13 @@ function App() {
                   )
                 })}
               </tr>
-              {daysList.map((day, i) => {
+              {daysList.map((day, day_idx) => {
                 return (
                   <tr className="grid-row-tr">
                     <td className="table-axis-td">
                       <span
                         className={
-                          i % 2 === 0
+                          day_idx % 2 === 0
                             ? "hide-day-axis-span"
                             : "show-day-axis-span"
                         }
@@ -51,8 +68,13 @@ function App() {
                         {day}
                       </span>
                     </td>
-                    {[...Array(52)].map(() => (
-                      <td className="cell-basic level-0-cell" />
+                    {[...Array(52)].map((_, week_idx) => (
+                      <td
+                        className={`cell-basic level-${assignLevel(
+                          props.data[week_idx * 7 + day_idx]
+                        )}-cell`}
+                        aria-label={week_idx}
+                      />
                     ))}
                   </tr>
                 )
@@ -85,5 +107,3 @@ function App() {
     </div>
   )
 }
-
-export default App
